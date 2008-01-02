@@ -18,6 +18,7 @@ Source: 	%{name}-%{version}.tar.bz2
 Source1:	d4x-zh_TW.po.bz2
 Source2:	d4x-pt_BR.po.bz2
 URL: 		http://www.krasu.ru/soft/chuchelo/
+BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Buildrequires:	libao-devel
 Buildrequires:  gtk+2-devel 
 Buildrequires:  ImageMagick
