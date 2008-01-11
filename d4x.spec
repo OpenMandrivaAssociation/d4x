@@ -81,14 +81,6 @@ mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 mv %{buildroot}%{_datadir}/gnome/apps/Internet/nt.desktop %{buildroot}%{_datadir}/applications/nt.desktop
 
 # menu
-mkdir -p %{buildroot}%{_menudir}
-cat << EOF > %{buildroot}%{_menudir}/%{name}
-?package(%{name}): longtitle="%{Summary}" \
-command="%_bindir/nt" title="%{title}" needs="x11" \
-section="%{section}" \
-icon="nt.png" \
-xdg="true"
-EOF
 
 desktop-file-install --vendor="" \
   --remove-category="Application" \
@@ -120,7 +112,6 @@ rm -fr %{buildroot}
 %defattr(-, root, root)
 %doc ChangeLog INSTALL* README* PLANS TODO 
 %{_bindir}/*
-%{_menudir}/%{name}
 %{_datadir}/applications/nt.desktop
 %{_miconsdir}/nt.png
 %{_iconsdir}/nt.png
