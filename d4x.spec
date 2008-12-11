@@ -21,7 +21,7 @@ URL: 		http://www.krasu.ru/soft/chuchelo/
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Buildrequires:	libao-devel
 Buildrequires:  gtk+2-devel 
-Buildrequires:  ImageMagick
+Buildrequires:  imagemagick
 Buildrequires:  openssl-devel 
 Buildrequires:  boost-devel
 Buildrequires:  desktop-file-utils
