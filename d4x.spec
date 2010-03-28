@@ -25,9 +25,11 @@ BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Buildrequires:	libao-devel
 Buildrequires:  gtk+2-devel 
 Buildrequires:  imagemagick
-Buildrequires:  openssl-devel 
-Buildrequires:  boost-devel
+Buildrequires:  openssl-devel
+BuildRequires:	gettext-devel 
 Buildrequires:  desktop-file-utils
+BuildRequires:	esound-devel
+BuildRequires:	boost-devel
 Obsoletes:	nt
 Provides:	nt
 
