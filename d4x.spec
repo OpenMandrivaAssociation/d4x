@@ -1,6 +1,6 @@
 %define name	d4x
 %define version	2.5.7.1
-%define release	%mkrel 6
+%define release	%mkrel 7
 %define group	Networking/File transfer
 
 %define	section	Internet/File Transfer
