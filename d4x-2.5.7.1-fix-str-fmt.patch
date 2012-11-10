@@ -1,0 +1,11 @@
+--- main/config.cc.str	2010-03-28 11:58:24.000000000 +0200
++++ main/config.cc	2010-03-28 11:58:35.000000000 +0200
+@@ -935,7 +935,7 @@
+ 	for (int i=0;i<downloader_parsed_args_num;i++){
+ 		if (downloader_parsed_args[i].cmd==type){
+ 			if (num) printf(",");
+-			printf(downloader_parsed_args[i].name);
++			printf("%s",downloader_parsed_args[i].name);
+ 			num+=1;
+ 		};
+ 	};

@@ -1,0 +1,92 @@
+--- main/face/edit.cc.gcc	2010-03-28 11:55:37.000000000 +0200
++++ main/face/edit.cc	2010-03-28 11:56:25.000000000 +0200
+@@ -1450,7 +1450,7 @@
+ 
+ static void _proxy_port_changed_(GtkEntry *entry,GtkEntry *entryh){
+ 	const char *tmp=gtk_entry_get_text(entryh);
+-	char *tmp1=index(tmp,':');
++	char *tmp1=index(const_cast<char *>(tmp),':');
+ 	if (tmp1){
+ 		*tmp1=0;
+ 		char *ns=sum_strings(tmp,":",gtk_entry_get_text(entry),NULL);
+--- main/ftp.cc.gcc	2010-03-28 12:03:30.000000000 +0200
++++ main/ftp.cc	2010-03-28 12:04:09.000000000 +0200
+@@ -261,7 +261,7 @@
+ };
+ 
+ static void d4x_ftp_parse_pasv(const char *str,int args[]){
+-	char *a=index(str,'(');
++	char *a=index(const_cast<char *>(str),'(');
+ 	if (a==NULL) return;
+ 	a+=1;
+ 	int i=0;
+--- main/html.cc.gcc	2010-03-28 11:57:30.000000000 +0200
++++ main/html.cc	2010-03-28 11:57:53.000000000 +0200
+@@ -700,7 +700,7 @@
+ 
+ void tHtmlParser::set_content_type(const char *ct){
+ 	//Example: text/html; charset=koi8-r
+-	char *a=index(ct,'=');
++	const char *a=index(ct,'=');
+ 	if (a) codepage=a+1;
+ };
+ 
+--- main/locstr.cc.gcc	2010-03-28 11:59:01.000000000 +0200
++++ main/locstr.cc	2010-03-28 12:02:05.000000000 +0200
+@@ -281,7 +281,7 @@
+ 	DBC_RETVAL_IF_FAIL(str!=NULL,NULL);
+ 	DBC_RETVAL_IF_FAIL(what!=NULL,NULL);
+ 	while (*str){
+-		char *a=index(what,*str);
++		const char *a=index(what,*str);
+ 		if (a) return(str);
+ 		str++;
+ 	};
+@@ -472,7 +472,7 @@
+ char *escape_char(const char *where,char what,char bywhat){
+ 	DBC_RETVAL_IF_FAIL(where!=NULL,NULL);
+ 	int num=0;
+-	char *tmp=index(where,what);
++	char *tmp=index(const_cast<char *>(where),what);
+ 	while(tmp){
+ 		num+=1;
+ 		tmp=index(tmp+1,what);
+@@ -481,7 +481,7 @@
+ 		char *rvalue=new char[strlen(where)+num*2+1];
+ 		*rvalue=0;
+ 		char *r=rvalue;
+-		tmp=index(where,what);
++		tmp=index(const_cast<char *>(where),what);
+ 		while(tmp){
+ 			if (tmp-where)
+ 				memcpy(r,where,tmp-where);
+@@ -490,7 +490,7 @@
+ 			r[1]=what;
+ 			r+=2;
+ 			where=tmp+1;
+-			tmp=index(where,what);
++			tmp=index(const_cast<char *>(where),what);
+ 		};
+ 		*r=0;
+ 		if (*where)
+@@ -962,17 +962,17 @@
+ 	DBC_RETVAL_IF_FAIL(a!=NULL,NULL);
+ 	DBC_RETVAL_IF_FAIL(b!=NULL,NULL);
+ 	int i=0;
+-	char *temp=index(b,'/');
++	char *temp=index(const_cast<char *>(b),'/');
+ 	while (temp){
+ 		while (*temp=='/') temp+=1;
+ 		temp=index(temp,'/');
+ 		i+=1;
+ 	};
+ 	i-=1;
+-	temp=rindex(a,'/');
++	temp=rindex(const_cast<char *>(a),'/');
+ 	while (temp && i>0){
+ 		*temp=0;
+-		char *tmp=rindex(a,'/');
++		char *tmp=rindex(const_cast<char *>(a),'/');
+ 		*temp='/';
+ 		temp=tmp;
+ 		i-=1;

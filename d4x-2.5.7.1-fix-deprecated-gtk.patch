@@ -1,0 +1,20 @@
+--- configure.ac.gtk	2010-03-28 11:48:45.000000000 +0200
++++ configure.ac	2010-03-28 11:49:03.000000000 +0200
+@@ -298,7 +298,6 @@
+ 
+ # Other needed defines
+ AC_DEFINE(_REENTRANT, , [Enable reenrant code of glibc])
+-AC_DEFINE(GTK_DISABLE_DEPRECATED, , [Enable warnings about deprecated functions usage])
+ AC_DEFINE(_FILE_OFFSET_BITS, 64, [To support files over 2GB])
+ 
+ # Prepare all requiered flags
+--- main/face/list.cc.gtk	2010-03-28 11:55:02.000000000 +0200
++++ main/face/list.cc	2010-03-28 11:55:10.000000000 +0200
+@@ -8,7 +8,6 @@
+  *	but WITHOUT ANY WARRANTY; without even the implied warranty of
+  *	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+  */
+-#define GTK_DISABLE_DEPRECATED
+ 
+ #include <stdio.h>
+ #include <gtk/gtk.h>
