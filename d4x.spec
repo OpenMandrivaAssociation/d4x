@@ -20,7 +20,7 @@ Source2:	d4x-pt_BR.po.bz2
 Patch0:		d4x-2.5.7.1-fix-deprecated-gtk.patch
 Patch1:		d4x-2.5.7.1-fix-str-fmt.patch
 Patch2:		d4x-2.5.7.1-gcc4.4.patch
-URL: 		http://www.krasu.ru/soft/chuchelo/
+URL: 		https://www.krasu.ru/soft/chuchelo/
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Buildrequires:	libao-devel
 Buildrequires:  gtk+2-devel 
